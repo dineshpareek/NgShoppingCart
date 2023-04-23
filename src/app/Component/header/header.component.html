@@ -1,0 +1,40 @@
+<header class="p-3 bg-dark text-white">
+  <div class="container">
+    <div
+      class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+    >
+      <a
+        href="/"
+        class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
+      >
+        <h2>
+          My
+          <span class="badge text-bg-primary"
+            >Cart <i class="fa fa-cart-arrow-down" aria-hidden="true"></i
+          ></span>
+        </h2>
+      </a>
+      <div
+        class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+      ></div>
+
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+        <input
+          type="search"
+          class="form-control form-control-dark"
+          placeholder="Search Product..."
+          aria-label="Search"
+        />
+      </form>
+
+      <div class="text-end">
+        <button type="button" class="btn btn-outline-light me-2">Login</button>
+        <button type="button" class="btn btn-warning">Sign-up</button>
+        <button routerLink="cart" type="button" class="btn btn-success">
+          <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Cart
+          <i class="badge bg-dark">{{ totalItem }}</i>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

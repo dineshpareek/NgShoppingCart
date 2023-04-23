@@ -1,0 +1,101 @@
+<ng-container class="container mb-4" *ngIf="products.length == 0">
+  <div class="col-sm-12 empty-cart-cls text-center">
+    <i class="fa fa-cart-plus fa-5x text-success" aria-hidden="true"></i>
+    <h3><strong>Your Cart is Empty</strong></h3>
+
+    <a
+      routerLink="product"
+      class="btn btn-primary cart-btn-transform m-3"
+      data-abc="true"
+      >continue shopping</a
+    >
+  </div>
+</ng-container>
+
+<ng-container class="container mb-4" *ngIf="products.length > 0">
+  <div class="row">
+    <div class="col-12">
+      <p class="text-center">Welcome to your cart</p>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Product</th>
+              <th scope="col">Available</th>
+              <th scope="col" class="text-center">Quantity</th>
+              <th scope="col" class="text-right">Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of products; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>
+                <img
+                  src="{{ item.image }}"
+                  alt="{{ item.title }}"
+                  style="width: 50px"
+                />
+              </td>
+              <td>{{ item.title }}</td>
+              <td>
+                <input
+                  class="form-control"
+                  type="text"
+                  value="{{ item.quantity }}"
+                />
+              </td>
+              <td class="text-right">$ {{ item.price }}</td>
+              <td class="text-right">
+                <button
+                  (click)="removeItem(item)"
+                  class="btn btn-sm btn-danger"
+                >
+                  <i class="fa fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Sub-Total</td>
+              <td class="text-right">$ {{ grandTotal }}</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Shipping</td>
+              <td class="text-right">6,90 €</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><strong>Total</strong></td>
+              <td class="text-right"><strong>346,90 €</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col mb-2">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <button class="btn btn-block btn-light">Continue Shopping</button>
+        </div>
+        <div class="col-sm-12 col-md-6 text-right">
+          <button class="btn btn-lg btn-block btn-success text-uppercase">
+            Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-3"><app-side-list></app-side-list></div>
+
+  <div class="col-md-9">
+    <div class="row">
+      <div class="col-md-4 mt-2 mb-2 mr-2" *ngFor="let item of productList">
+        <app-product [props]="item"></app-product>
+      </div>
+    </div>
+  </div>
+</div>
