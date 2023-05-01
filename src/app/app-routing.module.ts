@@ -4,13 +4,13 @@ import { CartComponent } from './Pages/cart/cart.component';
 import { ProductListComponent } from './Pages/product-list/product-list.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'product',pathMatch:'full'},
-  {path:'product', component:ProductListComponent},
-  {path:'cart', component:CartComponent},
+  { path: '', redirectTo: 'product', pathMatch: 'full' },
+  { path: 'product', component: ProductListComponent },
+  { path: 'cart', component: CartComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

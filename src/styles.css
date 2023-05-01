@@ -1,11 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 .col-example {
-    border: 1px solid #eee;
-    padding: 10px;
-    background-color: #33b5e5;
-    color: #fff;
+  border: 1px solid #eee;
+  padding: 10px;
+  background-color: #33b5e5;
+  color: #fff;
 }
 .border {
-    border: 1px solid #e0e0e0 !important;
-    border-radius: .5rem !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 0.5rem !important;
+}
+.cartbtn {
+  white-space: nowrap;
+  margin-left: 3px;
+}
+
+.main {
+  margin-top: 70px;
 }

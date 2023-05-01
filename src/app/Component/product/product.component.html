@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="card">
+  <div class="card bg-light">
     <div class="card-body">
       <div class="card-img-actions">
         <img
@@ -10,7 +10,7 @@
       </div>
     </div>
 
-    <div class="card-body bg-light text-center">
+    <div class="card-body text-center">
       <div class="mb-2">
         <h6 class="font-weight-semibold mb-2">
           <a href="#" class="text-default mb-2" data-abc="true">{{
@@ -18,19 +18,18 @@
           }}</a>
         </h6>
 
-        <a href="#" class="text-muted" data-abc="true">{{ props.category }}</a>
+        <a href="#" class="text-muted" data-abc="true">{{
+          props.category | titlecase
+        }}</a>
       </div>
 
-      <h3 class="mb-0 font-weight-semibold">${{ props.price }}</h3>
+      <h3 class="mb-0 font-weight-semibold">$ {{ props.price }}</h3>
 
       <div>
-        <i class="fa fa-star star"></i>
-        <i class="fa fa-star star"></i>
-        <i class="fa fa-star star"></i>
-        <i class="fa fa-star star"></i>
+        <i *ngFor="let number of numbers" class="fa fa-star star"></i>
       </div>
 
-      <div class="text-muted mb-3">{{ props.count }} reviews</div>
+      <div class="text-muted mb-3">{{ props.rating.count }} reviews</div>
 
       <button type="button" (click)="AddToCart(props)" class="btn bg-cart">
         <i class="fa fa-cart-plus mr-2"></i> Add to cart

@@ -4,7 +4,7 @@
     <h3><strong>Your Cart is Empty</strong></h3>
 
     <a
-      routerLink="product"
+      routerLink="/product"
       class="btn btn-primary cart-btn-transform m-3"
       data-abc="true"
       >continue shopping</a
@@ -17,10 +17,10 @@
     <div class="col-12">
       <p class="text-center">Welcome to your cart</p>
       <div class="table-responsive">
-        <table class="table table-striped">
+        <table class="table table-bordered">
           <thead>
             <tr>
-              <th scope="col"></th>
+              <th scope="col">#</th>
               <th scope="col">Product</th>
               <th scope="col">Available</th>
               <th scope="col" class="text-center">Quantity</th>
@@ -41,6 +41,7 @@
               <td>{{ item.title }}</td>
               <td>
                 <input
+                  width="100"
                   class="form-control"
                   type="text"
                   value="{{ item.quantity }}"
@@ -58,28 +59,19 @@
             </tr>
 
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td colspan="4" rowspan="3"></td>
               <td>Sub-Total</td>
-              <td class="text-right">$ {{ grandTotal }}</td>
+              <td class="text-right">$ {{ grandTotal | number }}</td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
               <td>Shipping</td>
-              <td class="text-right">6,90 €</td>
+              <td class="text-right">$ {{ Shipping | number }}</td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
               <td><strong>Total</strong></td>
-              <td class="text-right"><strong>346,90 €</strong></td>
+              <td class="text-right">
+                <strong>$ {{ grandTotal + Shipping | number }}</strong>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -88,11 +80,14 @@
     <div class="col mb-2">
       <div class="row">
         <div class="col-sm-12 col-md-6">
-          <button class="btn btn-block btn-light">Continue Shopping</button>
+          <button routerLink="/product" class="btn btn-secondary">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i> Continue
+            Shopping
+          </button>
         </div>
-        <div class="col-sm-12 col-md-6 text-right">
-          <button class="btn btn-lg btn-block btn-success text-uppercase">
-            Checkout
+        <div class="col-sm-12 col-md-6 text-end text-right">
+          <button class="btn btn-success text-uppercase">
+            Checkout <i class="fa fa-shopping-cart"></i>
           </button>
         </div>
       </div>

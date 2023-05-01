@@ -1,40 +1,42 @@
-<header class="p-3 bg-dark text-white">
-  <div class="container">
-    <div
-      class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"
+      ><h4>
+        Store
+        <span class="badge text-bg-primary"
+          >Cart <i class="fa fa-cart-arrow-down" aria-hidden="true"></i
+        ></span></h4
+    ></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarCollapse"
+      aria-controls="navbarCollapse"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
     >
-      <a
-        href="/"
-        class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
-      >
-        <h2>
-          My
-          <span class="badge text-bg-primary"
-            >Cart <i class="fa fa-cart-arrow-down" aria-hidden="true"></i
-          ></span>
-        </h2>
-      </a>
-      <div
-        class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
-      ></div>
-
-      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav me-auto mb-2 mb-md-0"></div>
+      <form class="d-flex">
         <input
           type="search"
-          class="form-control form-control-dark"
+          name="Search"
+          class="form-control form-control-dark mr-2"
           placeholder="Search Product..."
+          autocomplete="off"
+          [(ngModel)]="searchKey"
+          (keyup)="Search($event)"
           aria-label="Search"
         />
-      </form>
 
-      <div class="text-end">
-        <button type="button" class="btn btn-outline-light me-2">Login</button>
-        <button type="button" class="btn btn-warning">Sign-up</button>
-        <button routerLink="cart" type="button" class="btn btn-success">
+        <button routerLink="cart" type="button" class="btn btn-success cartbtn">
           <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Cart
           <i class="badge bg-dark">{{ totalItem }}</i>
         </button>
-      </div>
+      </form>
     </div>
   </div>
-</header>
+</nav>

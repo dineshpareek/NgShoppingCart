@@ -1,9 +1,33 @@
 <div class="row">
-  <div class="col-3"><app-side-list></app-side-list></div>
+  <div class="col-3 mt-2 mb-2">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a
+        class="list-group-item list-group-item-action"
+        data-toggle="list"
+        role="tab"
+        aria-controls="home"
+        (click)="filterCategories('All')"
+        >{{ "All" | titlecase }}</a
+      >
+      <ng-container *ngFor="let data of catagoryList">
+        <a
+          class="list-group-item list-group-item-action"
+          data-toggle="list"
+          role="tab"
+          aria-controls="home"
+          (click)="filterCategories(data)"
+          >{{ data | titlecase }}</a
+        >
+      </ng-container>
+    </div>
+  </div>
 
   <div class="col-md-9">
     <div class="row">
-      <div class="col-md-4 mt-2 mb-2 mr-2" *ngFor="let item of productList">
+      <div
+        class="col-md-4 mt-2 mb-2 mr-2"
+        *ngFor="let item of filterProductList | filter : searchkey : 'title'"
+      >
         <app-product [props]="item"></app-product>
       </div>
     </div>
