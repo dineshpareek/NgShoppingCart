@@ -2,6 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
 
+## Demo Screenshot
+![StoreCart](https://user-images.githubusercontent.com/69452081/235440587-29f59c52-5ec6-4509-9b30-1ee58c4241a3.gif)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
